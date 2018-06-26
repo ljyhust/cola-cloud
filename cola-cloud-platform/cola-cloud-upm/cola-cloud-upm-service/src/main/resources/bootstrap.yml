@@ -3,7 +3,7 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://${REGISTRY_SERVER_USERNAME}:${REGISTRY_SERVER_PASSWORD}@registry:8761/eureka/
+      defaultZone: http://${REGISTRY_SERVER_USERNAME:user}:${REGISTRY_SERVER_PASSWORD:admin}@registry:8761/eureka/
 
 spring:
   application:
@@ -11,8 +11,8 @@ spring:
   cloud:
     config:
       fail-fast: true
-      username: ${CONFIG_SERVER_USERNAME}
-      password: ${CONFIG_SERVER_PASSWORD}
+      username: ${CONFIG_SERVER_USERNAME:user}
+      password: ${CONFIG_SERVER_PASSWORD:admin}
       discovery:
         enabled: true
         service-id: config

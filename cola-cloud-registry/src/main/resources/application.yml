@@ -9,8 +9,8 @@ security:
   basic:
     enabled: true               #  开启基于HTTP basic的认证
   user:
-    name: ${REGISTRY_SERVER_USERNAME}
-    password: ${REGISTRY_SERVER_PASSWORD}
+    name: ${REGISTRY_SERVER_USERNAME:user}
+    password: ${REGISTRY_SERVER_PASSWORD:admin}
 
 eureka:
   instance:
